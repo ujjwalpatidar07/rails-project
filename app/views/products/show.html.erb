@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-4">
+    <h2>This Product Category</h2>
+    <ul>
+      <li>
+        
+        <%= @product.category.name %>
+      </li>
+    </ul>
+    <%= link_to "Destroy", product_path(@product),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %><br>
+    <%= link_to "Back", products_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>

@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>You got a new subscription from <%= @subscription.userr.name %>!</p>
+    <p>
+    Order details<br>
+    --------------------------
+    </p>
+    <p>Name: <%= @subscription.userr.name %></p>
+    <p>Subscription  Price: <%= @subscription.subscription_plan.plan_value %></p>
+    <p>Email: <%= @subscription.userr.email %></p>
+    <p>
+    Message:<br>
+    ----------
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+  </body>
+</html>

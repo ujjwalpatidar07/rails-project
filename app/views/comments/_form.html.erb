@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-4">
+    <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+      <div >
+        <%= form.label :commenter,class: 'form-label' %>
+        <%= form.text_field :commenter,class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :body,class: 'form-label' %>
+        <%= form.text_area :body,class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-dark'%>
+      </div>
+    <% end %>
+    
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>

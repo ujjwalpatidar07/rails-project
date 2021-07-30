@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-4">
+   
+    <h2><%= @subscriptionplan.plan_type %> Plan's Details : </h2>
+   <!--  <h5>Name : <i style="color: blueviolet;"><%= @subscriptionplan.plan_name %></i></h5>
+    <h5>Cost : <i style="color: blueviolet;"><%= @subscriptionplan.plan_value %></i></h5>
+    <h5>Type : <i style="color: blueviolet;"><%= @subscriptionplan.plan_type %></i></h5><br> -->
+    <table class="table table-dark table-hover" >
+      <tr><th>Plan Name</th><th>Plan Cost</th></tr>
+    
+    
+      <% SubscriptionPlan.where(plan_type: @subscriptionplan.plan_type).each do |name|  %>
+        <tr>
+          <td><%= name.plan_name %></td><td><%= name.plan_value %></td>
+        </tr>  
+      <% end %>
+    
+    </table>
+
+    <h2><%= @subscriptionplan.plan_type %> Plan's User's : </h2>
+    <table class="table table-dark table-striped table-hover table-border" >
+      <tr><th>User Name</th></tr>
+    
+    
+      <% @subscriptionplan.userrs.distinct.each do |name|  %>
+        <tr>
+
+          <td>
+            <%= name.name%>
+          </td>
+        </tr>  
+      <% end %>
+    
+    </table>
+
+    <br>
+    <%= link_to "Destroy", subscription_plan_path(@subscriptionplan),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %><br>
+    <%= link_to "Back", subscription_plans_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+  
+
+

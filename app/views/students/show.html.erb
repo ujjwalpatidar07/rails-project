@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-4">
+    <h4>Student: <i style="color: blueviolet;"><%= @student.name %></i></h4>
+    <strong style="color: darkblue;"><%= @student.name %>'s Teachers:</strong><br>
+    <ul>
+      <% @student.teachers.each do |teacher|  %>
+      <li>
+        <%= teacher.name %>  
+      </li>
+      <% end %>
+    </ul>
+    <br>
+    <%= link_to "Update Teacher's",edit_student_path(@student) %><br>
+    <%= link_to "Destroy", student_path(@student),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %><br>
+    <%= link_to "Back", students_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>

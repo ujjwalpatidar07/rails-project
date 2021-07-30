@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h2>Choose Plan</h2>
+    <%= form_tag pay_now_subscriptions_path, method: 'get' do %>
+      
+      <% subscription_plan_options.each do |plan| %>
+        <%= radio_button("subscription_plan", "id", plan.id, checked: true) %> <b><%= plan.plan_name %></b> - <%=plan.plan_value %>(<i><%= plan.plan_type%></i>)<br>
+      <% end %>
+      <%= submit_tag 'Proceed to payment', class: 'btn btn-info' %>
+    <% end %>
+  </div>
+</div>

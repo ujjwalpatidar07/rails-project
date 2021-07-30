@@ -1,0 +1,18 @@
+
+<div class="nested-fields">
+    <%= f.hidden_field :_destroy %>
+    <div>
+        <%= f.label :image_name %>
+        <%= f.text_field :name %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :attachment %>
+        <%= f.file_field :attachment %>
+    </div>
+    <br>
+    <div>
+        <%= link_to "Remove", '#', class: "remove_fields" %>
+    </div>
+
+</div>

@@ -1,0 +1,60 @@
+
+<div class="row">
+  <div class="col-4">
+    <h2>Registered Plans</h2>
+    <table class="table table-dark table-hover">
+      <tr>
+        <td>Plan name</td>
+        <td>Amount</td>
+        <td>Duration</td>
+      </tr>
+      <% @subscriptionplans.each do |s| %>
+          <tr>
+            <td><%=  s.plan_name %> </td>
+            <td><%=  s.plan_value %> </td>
+            <td><%=  s.plan_type %> </td>
+          </tr>
+      <% end %>
+    </table>
+    <%= link_to 'Add New Plan', new_subscription_plan_path %><br>
+    <%= link_to "Back", root_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-4">
+    <h2>Registered Plans</h2>
+    <ul>
+      <%# @subscriptionplans.group(:plan_type).distinct.sort.each do |s| %>
+          <li>
+            <%#=  link_to s.plan_type, s %> 
+          </li>
+      <%#end %>
+    </ul>
+    <%#= link_to 'Add New Plan', new_subscription_plan_path %><br>
+    <%#= link_to "Back", root_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div> -->

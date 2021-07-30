@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-4">
+    <h2>Registered Students</h2>
+    <ul>
+      <% @students.each do |student| %>
+          <li>
+            <%= link_to student.name, student %>
+          </li>
+      <% end %>
+    </ul>
+    <%= link_to "Add New Student",new_student_path %><br>
+    <%= link_to "Back", root_path %>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>

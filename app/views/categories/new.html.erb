@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h2>Add New Category</h2>
+    <%= form_with model: @category, url: categories_path do |form| %>
+      
+      <div class="form-group">
+        <%= form.label :category_name,class: "form-label" %><br>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div><br>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <%= form.submit  class: 'btn btn-dark' %>
+      </div>
+    <% end %>
+    <%= link_to "Back",categories_path %>
+  </div>
+  <div class="col-4"></div>
+  
+</div>

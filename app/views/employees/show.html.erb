@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-4">
+    <h2>Image Name</h2>
+    <% @employee.pictures.each do |image| %>
+  <div class="col-4">
+    <%= image.name%>
+  </div>
+  <div class="col-4">
+    <%= image_tag url_for(image.attachment.variant(resize_to_limit: [200, 200]).processed ) if image.attachment.attached? %>
+  </div>
+<% end %>
+
+    <%= link_to "Back", employees_path%>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>

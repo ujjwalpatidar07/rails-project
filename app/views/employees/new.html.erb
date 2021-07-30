@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h2>Add New Employee</h2>
+    <%= form_with model: @employee, url: employees_path do |form| %>
+      
+      <div class="form-group">
+        <%= form.label :employee_name,class: "form-label" %><br>
+        <%= form.text_field :name, class: 'form-control' %>
+        <%= @employee.errors.full_messages.to_sentence%>
+      </div>
+
+      <fieldset>
+        <legend>Comments:</legend>
+          <%= form.fields_for :pictures do |picture_form| %>
+            <%= render 'picture_fields', f: picture_form  %>
+          <% end %>
+          <%= link_to_add_fields "Add Picture", form, :pictures %>
+      </fieldset>
+
+      <br>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-dark'%>
+      </div>
+    <% end %>
+    <%= link_to "Back", employees_path %>
+  </div>
+  <div class="col-4"></div>
+  
+</div>

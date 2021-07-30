@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h2>Add New Company</h2>
+    <%= form_with model: @company, url: companies_path do |form| %>
+      
+      <div class="form-group">
+        <%= form.label :company_name,class: "form-label" %><br>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <fieldset>
+        <legend>Pictures:</legend>
+          <%= form.fields_for :pictures do |picture_form| %>
+            <%= render 'picture_fields', f: picture_form  %>
+          <% end %>
+          <%= link_to_add_fields "Add Picture", form, :pictures %>
+      </fieldset>
+
+      <br>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-dark' %>
+      </div>
+    <% end %>
+    <%= link_to "Back", companies_path %>
+  </div>
+  <div class="col-4"></div>
+  
+</div>
