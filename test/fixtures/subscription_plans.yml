@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  value: 1
-  type: 
+  plan_name: MyString
+  plan_value: 1
+  plan_type: MyString
   razorpay_plan_id: MyString
 
 two:
-  value: 1
-  type: 
+  plan_name: MyString
+  plan_value: 1
+  plan_type: MyString
   razorpay_plan_id: MyString

@@ -16,11 +16,9 @@ Rails.application.routes.draw do
   resources :teachers
 
   resources :subscriptions do
-    get :subscribe, on: :collection
     get :pay_now, on: :collection
   end
   resources :subscription_plans
-  resources :userrs
 
   resources :categories
   resources :products

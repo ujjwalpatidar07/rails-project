@@ -26,6 +26,6 @@ class SubscriptionsController < ApplicationController
 
   private
     def subscription_params
-      params.require(:subscription).permit(:name, :subscription_plan_id, :userr_id, :razorpay_payment_id)
+      params.require(:subscription).permit(:name, :subscription_plan_id, :user_id, :razorpay_payment_id)
     end
 end

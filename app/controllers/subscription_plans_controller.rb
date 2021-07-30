@@ -31,6 +31,6 @@ class SubscriptionPlansController < ApplicationController
 
   private
     def subscriptionplan_params
-      params.require(:subscription_plan).permit(:plan_value,:plan_type,:plan_name)
+      params.require(:subscription_plan).permit(:plan_value, :plan_type, :plan_name)
     end
 end

@@ -1,7 +1,9 @@
 class SubscriptionPlan < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
-  has_many :userrs, through: :subscriptions
+  has_many :users, through: :subscriptions
+  validates :plan_name, presence: true
   validates :plan_value, presence: true
+  validates :plan_type, presence: true
 
   def validate_and_save
     begin

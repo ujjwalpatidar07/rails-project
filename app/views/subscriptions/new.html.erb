@@ -1,30 +1,13 @@
 <div class="row">
   <div class="col-4"></div>
   <div class="col-4">
-    <h2>Add New Subscription</h2>
-    <%= form_with model: @subscription, url: subscriptions_path do |form| %>
+    <h2>Choose Plan</h2>
+    <%= form_tag pay_now_subscriptions_path, method: 'get' do %>
       
-      <div class="form-group">
-        <%= form.label :subscription_name, class: 'form-label' %>
-        <%= form.text_field :name,class: 'form-control' %>
-      </div>
-      <br>
-      <div class="form-group">
-        <%= form.label :subscription_plan, class: 'form-label' %>
-        <%= form.select :subscription_plan_id, SubscriptionPlan.all.map{|s| [s.plan_value, s.id]},class: 'form-control' %>
-      </div>
-      <br>
-      <div class="form-group">
-        <%= form.label :userr_name, class: 'form-label' %>
-        <%= form.select :userr_id, Userr.all.map{|u| [u.name, u.id]} ,class: 'form-control' %>
-      </div>
-      
-     <br>
-      <div class="actions">
-        <%= form.submit class: 'btn btn-dark'%>
-      </div>
+      <% subscription_plan_options.each do |plan| %>
+        <%= radio_button("subscription_plan", "id", plan.id, checked: true) %> <b><%= plan.plan_name %></b> - <%=plan.plan_value %>(<i><%= plan.plan_type%></i>)<br>
+      <% end %>
+      <%= submit_tag 'Proceed to payment', class: 'btn btn-info' %>
     <% end %>
-    <%= link_to "Back",subscriptions_path %>
   </div>
-  <div class="col-4"></div>
 </div>

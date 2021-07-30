@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_094346) do
+ActiveRecord::Schema.define(version: 2021_07_30_111706) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -140,22 +140,22 @@ ActiveRecord::Schema.define(version: 2021_07_30_094346) do
   end
 
   create_table "subscription_plans", force: :cascade do |t|
-    t.integer "value"
-    t.string "type"
+    t.string "plan_name"
+    t.integer "plan_value"
+    t.string "plan_type"
     t.string "razorpay_plan_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string "name"
     t.integer "subscription_plan_id"
-    t.integer "userr_id"
+    t.integer "user_id"
     t.string "razorpay_payment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["subscription_plan_id"], name: "index_subscriptions_on_subscription_plan_id"
-    t.index ["userr_id"], name: "index_subscriptions_on_userr_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "teachers", force: :cascade do |t|
