@@ -1,11 +1,11 @@
-You got a new subscription from <%= @subscription.userr.name %>!
+You got a new subscription from <%= @subscription.user.name %>!
 ===============================================
 
 Order Details:
 --------------------------
 
-Subscription: <%= @subscription.name %>
-Email: <%= @subscription.userr.email %>
+Subscription: <%= @subscription.subscription_plan.plan_name %>
+Email: <%= @subscription.user.email %>
 Subscription  Price: <%= @subscription.subscription_plan.plan_value %>
 To login to the site, just follow this link: <%= @url %>
 

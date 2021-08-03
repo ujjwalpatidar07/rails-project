@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <%= f.label :contact_no ,class: "form-label"%><br />
-        <%= f.text_field :contact_no, autofocus: true, placeholder: 'ex - 9999999999', class: 'form-control' %>
+        <%= f.text_field :contact_no, placeholder: 'ex - 9999999999', class: 'form-control' %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

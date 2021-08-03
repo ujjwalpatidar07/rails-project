@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_111706) do
+ActiveRecord::Schema.define(version: 2021_08_02_102908) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -154,6 +154,8 @@ ActiveRecord::Schema.define(version: 2021_07_30_111706) do
     t.string "razorpay_payment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "razorpay_order_id"
+    t.string "razorpay_signature"
     t.index ["subscription_plan_id"], name: "index_subscriptions_on_subscription_plan_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
@@ -174,6 +176,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_111706) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "contact_no"
+    t.string "customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
